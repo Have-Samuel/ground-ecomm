@@ -9,7 +9,7 @@ class AdminController < ApplicationController
       sales: Order.where(created_at: Time.now.midnight..Time.now).count,
       revenue: Order.where(created_at: Time.now.midnight..Time.now).sum(:total).to_f.round(),
       avg_sale: Order.where(created_at: Time.now.midnight..Time.now).average(:total).to_f.round(),
-      per_sale: OrderProduct.joins(:order).where(orders: { created_at: Time.now.midnight..Time.now }).average(:quantity)
+      per_sale: OrderProduct.joins(:order).where(orders: {created_at: Time.now.midnight..Time.now }).average(:quantity)
     }
 
     @order_by_day = Order.where("created_at > ?", Time.now - 7.days).order(:created_at)

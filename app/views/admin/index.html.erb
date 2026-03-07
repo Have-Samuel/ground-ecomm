@@ -31,8 +31,13 @@
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2 text-black">Items per Sale</div>
                 <p class="text-black text-base">
-                    <%= @quick_stats[:per_sale] ? @quick_stats[:per_sale].to_s : "0" %>
+                    <%= @quick_stats[:per_sale] ? @quick_stats[:per_sale].to_i : "0" %>
                 </p>
             </div>
+        </div>
+    </div>
+    </div>
+    <div data-controller="dashboard" class="mt-8 w-full max-w-4xl">
+        <canvas id="revenueChart"></canvas>
     </div>
 </div>

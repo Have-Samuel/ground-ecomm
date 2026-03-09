@@ -31,9 +31,8 @@ class Admin::CategoriesController < AdminController
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @admin_category.errors, status: :unprocessable_entity }
       end
-    # endclass Admin::Category < ApplicationRecord
+  # endclass Admin::Category < ApplicationRecord
 end
-
   end
 
   # PATCH/PUT /admin/categories/1 or /admin/categories/1.json

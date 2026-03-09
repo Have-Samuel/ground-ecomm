@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   end
   # For admin index route:
   resources :categories, only: [ :show ]
+  resources :products, only: [ :show ]
 
   get "admin" => "admin#index"
 end

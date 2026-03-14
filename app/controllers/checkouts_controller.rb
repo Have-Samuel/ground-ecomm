@@ -1,5 +1,6 @@
 class CheckoutsController < ApplicationController
   def create
-    puts "Hit Create"
+    stripe_secret_key = Rails.application.credentials.dig(:stripe, :secret_key)
+    Stripe.api_key = stripe_secret_key
   end
 end
